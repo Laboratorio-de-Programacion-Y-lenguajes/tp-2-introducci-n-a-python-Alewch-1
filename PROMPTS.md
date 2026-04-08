@@ -101,15 +101,28 @@ def evaluar_nota(nota: float) -> str:
 
 ### 4 - diccionarios.py
 
-**Herramienta**: 
+**Herramienta**: Cloude
 
-**Prompt usado**:
+**Prompt usado**: 
+parametros de entrada dic e int, retorna un dic,
+Retorna un nuevo diccionario con solo los pares
+cuyo valor sea >= minimo.
+eficiente y robusto
 > 
 
 **Resultado obtenido**:
+if not isinstance(d, dict):
+        raise TypeError(f"Se esperaba un dict, se recibió: {type(d).__name__}")
+    if not isinstance(minimo, (int, float)):
+        raise TypeError(f"Se esperaba un int o float, se recibió: {type(minimo).__name__}")
+
+    try:
+        return {clave: valor for clave, valor in d.items() if valor >= minimo}
+    except TypeError as e:
+        raise ValueError(f"Todos los valores deben ser comparables con el mínimo: {e}")
 
 
-**¿Lo usaste tal cual o lo modificaste?**
+**¿Lo usaste tal cual o lo modificaste?** Lo modifique.
 
 
 ---
