@@ -144,12 +144,23 @@ if not isinstance(d, dict):
 
 ### 6 - funciones.py
 
-**Herramienta**: 
+**Herramienta**: Gemini
 
-**Prompt usado**:
+**Prompt usado**:def aplicar_funcion(lista: list, func) -> list:
+    """
+    Aplica func a cada elemento de la lista y retorna la nueva lista.
+    """
+
 > 
 
-**Resultado obtenido**:
+**Resultado obtenido**: 
+nueva_lista = []
+    for elemento in lista:
+        # Aplicamos la función al elemento y guardamos el resultado
+        resultado = func(elemento)
+        nueva_lista.append(resultado)
+    
+    return nueva_lista
 
 
 **¿Lo usaste tal cual o lo modificaste?**
