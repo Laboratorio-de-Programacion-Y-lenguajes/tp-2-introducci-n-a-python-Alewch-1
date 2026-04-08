@@ -191,12 +191,38 @@ nueva_lista = []
 
 ### 7 - operaciones.py
 
-**Herramienta**: 
+**Herramienta**: cloude
 
-**Prompt usado**:
+**Prompt usado**: 
+def es_palindromo(texto: str) -> bool:
+    """
+    Utiliza esta estructura, que sea eficiente y robusto, legible y utiliza buenas practicas
+    Retorna True si el texto es palíndromo (ignorando espacios y mayúsculas).
+    Ejemplo: es_palindromo("Anita lava la tina") -> True
+    """
 > 
 
 **Resultado obtenido**:
+pythondef es_palindromo(texto: str) -> bool:
+    """
+    Retorna True si el texto es palíndromo (ignorando espacios y mayúsculas).
+    Ejemplo: es_palindromo("Anita lava la tina") -> True
+
+    Args:
+        texto: String a evaluar.
+
+    Returns:
+        True si el texto es palíndromo, False en caso contrario.
+
+    Raises:
+        TypeError: Si el argumento no es un string.
+    """
+    if not isinstance(texto, str):
+        raise TypeError(f"Se esperaba un str, se recibió: {type(texto).__name__}")
+
+    normalizado = texto.lower().replace(" ", "")
+
+    return normalizado == normalizado[::-1]
 
 
 **¿Lo usaste tal cual o lo modificaste?**
@@ -211,3 +237,4 @@ Respondé brevemente (3-5 oraciones):
 - ¿Qué aprendiste sobre cómo formular buenos prompts?
 - ¿En qué casos la IA fue útil y en cuáles no?
 - ¿Qué harías diferente la próxima vez?
+Hay que darle contexto siempre para la solucion este mas encaminada a lo que queremos, especificarle como seria la estructura, que propiedades deberia tener el codigo, etc. En todo fue util.
