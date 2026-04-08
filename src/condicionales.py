@@ -59,7 +59,7 @@ def es_bisiesto(anio: int) -> bool:
     excepto los divisibles por 100, salvo que también lo sean por 400.
     """
     # TU CÓDIGO AQUÍ
-    if ((anio % 4)==0 and (anio%400)==0) and ((anio%4) !=0 ):
+    if (anio % 4 == 0) and (anio % 100 != 0 or anio % 400 == 0):
         return True
     else:
         return False

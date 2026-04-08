@@ -31,15 +31,29 @@ Explicá qué cambios hiciste y por qué (o por qué no cambiaste nada).
 
 ### 1 - variables.py
 
-**Herramienta**: 
+**Herramienta**: Cloude
 
-**Prompt usado**:
+**Prompt usado**: Convierte un string numérico a float.
+    Ejemplo: convertir_a_float("3.14") -> 3.14
+    eficiente y robusto
 > 
 
 **Resultado obtenido**:
+if not isinstance(valor, str):
+        raise TypeError(f"Se esperaba un string, se recibió: {type(valor).__name__}")
+
+    valor_limpio = valor.strip()
+
+    if not valor_limpio:
+        raise ValueError("El string está vacío o contiene solo espacios.")
+
+    try:
+        return float(valor_limpio)
+    except ValueError:
+        raise ValueError(f"No se puede convertir '{valor_limpio}' a float.")
 
 
-**¿Lo usaste tal cual o lo modificaste?**
+**¿Lo usaste tal cual o lo modificaste?** Lo modifique para que lo haga robusto y eficiente.
 
 
 ---
