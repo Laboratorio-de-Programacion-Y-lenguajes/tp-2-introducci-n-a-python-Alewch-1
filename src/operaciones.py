@@ -9,6 +9,13 @@ def es_palindromo(texto: str) -> bool:
     Ejemplo: es_palindromo("Anita lava la tina") -> True
     """
     # TU CÓDIGO AQUÍ
+    texto_limpio = texto.lower().replace(" ", "")
+
+    texto_invertido = ""
+    for caracter in texto_limpio:
+        texto_invertido = caracter + texto_invertido
+    
+    return texto_limpio == texto_invertido
     pass
 
 
@@ -18,6 +25,13 @@ def capitalizar_palabras(texto: str) -> str:
     Ejemplo: capitalizar_palabras("hola mundo") -> "Hola Mundo"
     """
     # TU CÓDIGO AQUÍ
+    palabras = texto.split()
+    resultado = []
+    
+    for p in palabras:    
+        resultado.append(p.capitalize())
+    
+    return " ".join(resultado)
     pass
 
 
@@ -27,6 +41,16 @@ def contar_vocales(texto: str) -> int:
     sin distinguir mayúsculas/minúsculas.
     """
     # TU CÓDIGO AQUÍ
+    vocales = "aeiou"
+    contador = 0
+    
+    texto_min = texto.lower()
+    
+    for letra in texto_min:
+        if letra in vocales:
+            contador = contador + 1
+
+    return contador
     pass
 
 
@@ -37,4 +61,21 @@ def caesar_cipher(texto: str, desplazamiento: int) -> str:
     Ejemplo: caesar_cipher("abc", 1) -> "bcd"
     """
     # TU CÓDIGO AQUÍ
+    abc_minus = "abcdefghijklmnopqrstuvwxyz"
+    abc_mayus = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    resultado = ""
+    
+    for letra in texto:
+        if letra in abc_minus:
+            posicion = abc_minus.find(letra)
+            nueva_posicion = (posicion + desplazamiento) % 26
+            resultado = resultado + abc_minus[nueva_posicion]
+        elif letra in abc_mayus:
+            posicion = abc_mayus.find(letra)
+            nueva_posicion = (posicion + desplazamiento) % 26
+            resultado = resultado + abc_mayus[nueva_posicion]
+        else:
+            resultado = resultado + letra
+    
+    return resultado
     pass
