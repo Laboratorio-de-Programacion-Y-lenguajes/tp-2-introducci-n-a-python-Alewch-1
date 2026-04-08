@@ -46,15 +46,26 @@ Explicá qué cambios hiciste y por qué (o por qué no cambiaste nada).
 
 ### 2 - condicionales.py
 
-**Herramienta**: 
+**Herramienta**: Cloude y se probo el mismo prompt con gemini, deepseek y gpt
 
 **Prompt usado**:
+Requiero de una funcion que evalua notas de parciales en lenguaje python que siga las siguientes consignas, retorna una categoria tipo String y recibe como parametro una nota tipo float. Si la nota es mayor o igual a 9 retorna Sobresaliente, si es mayor o igual a 7 retorna Bueno, si es mayor o igual a 6 retorna Aprobado, si es menos a 6 retorna Desaprobado. Que sea eficiente y respete buenas practicas.
 > 
 
-**Resultado obtenido**:
+**Resultado obtenido**: Obtuve buen resultado con una modificacion al final que me saco un if menos y ademas no utilizo el if encadenado ya que la evaluacion se detiene apenas retorne un valor, este resultado tal vez fue gracias al "eficiente", ya que probe con otras IAs y me pusieron if encadenados(tiene su pro y su contra ya que le saca un poco de semantica al bloque). Tambien me mostro otra opcion pero mas robusto. 
+def evaluar_nota(nota: float) -> str:
+ if nota >= 9:
+        return "Sobresaliente"
+    if nota >= 7:
+        return "Bueno"
+    if nota >= 6:
+        return "Aprobado"
+    return "Desaprobado"
 
 
-**¿Lo usaste tal cual o lo modificaste?**
+
+
+**¿Lo usaste tal cual o lo modificaste?** Lo modifique para darle un poco de contexto, le dije el lenguaje, que tipo de dato de entrada y salida deberia tener y que propiedades deberia tener y respetar.
 
 
 ---
