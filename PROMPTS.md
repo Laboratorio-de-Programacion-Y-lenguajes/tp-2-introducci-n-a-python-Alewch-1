@@ -86,15 +86,27 @@ def evaluar_nota(nota: float) -> str:
 
 ### 3 - listas.py
 
-**Herramienta**: 
+**Herramienta**: Cloude
 
-**Prompt usado**:
+**Prompt usado**: 
+Realiza una funcion con esta estructura, eficiente y robusta
+suma_lista(numeros: list) -> int | float:
+    """
+    Retorna la suma de todos los elementos de la lista.
+    """
 > 
 
 **Resultado obtenido**:
 
+    if not isinstance(numeros, list):
+        raise TypeError(f"Se esperaba una list, se recibió: {type(numeros).__name__}")
+    if not all(isinstance(n, (int, float)) for n in numeros):
+        raise TypeError("Todos los elementos deben ser int o float.")
 
-**¿Lo usaste tal cual o lo modificaste?**
+    return sum(numeros)
+
+
+**¿Lo usaste tal cual o lo modificaste?** Lo modifique 
 
 
 ---
