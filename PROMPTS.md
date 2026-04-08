@@ -141,15 +141,24 @@ if not isinstance(d, dict):
 
 ### 5 - loops.py
 
-**Herramienta**: 
+**Herramienta**: Cloude 
 
-**Prompt usado**:
+**Prompt usado**: 
+    def tabla_multiplicar(n: int) -> list:
+    """
+    Sigue la estructura y que sea robusto y eficiente Retorna una lista con los primeros 10 múltiplos de n.
+    Ejemplo: tabla_multiplicar(3) -> [3, 6, 9, ..., 30]
+    """
 > 
 
 **Resultado obtenido**:
+if not isinstance(n, int):
+        raise TypeError(f"Se esperaba un int, se recibió: {type(n).__name__}")
+
+    return [n * i for i in range(1, 11)]
 
 
-**¿Lo usaste tal cual o lo modificaste?**
+**¿Lo usaste tal cual o lo modificaste?**Lo modifique
 
 
 ---
